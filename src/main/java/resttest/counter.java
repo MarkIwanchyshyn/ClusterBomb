@@ -7,13 +7,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import resttest.sql.TestConnector;
 
 @Controller
-@RequestMapping("/count")
 public class counter {
     long count = 0L;
 
-    @RequestMapping(method = RequestMethod.GET)
+    public counter(){
+        System.out.println("created lol");
+    }
+
+    @RequestMapping( value="/test", method = RequestMethod.GET)
     @ResponseBody
     public String getCount(){
+        System.out.println("got get request");
         return "{ sweg: " + count++ +","+
                 "all: " + TestConnector.getAll() +
                 "}";

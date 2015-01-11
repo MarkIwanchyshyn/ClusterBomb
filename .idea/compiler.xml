@@ -25,5 +25,8 @@
         <module name="ClusterBomb" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ClusterBomb" target="1.6" />
+    </bytecodeTargetLevel>
   </component>
 </project>
