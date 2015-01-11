@@ -8,9 +8,6 @@ import java.sql.*;
  * Created by Mark on 1/6/2015.
  */
 public abstract class TestConnector {
-    static final String URL = "jdbc:mysql://localhost/test";
-    static final String USER = "sqlUser";
-    static final String PASS = "swag100";
 
     private static Connection conn;
     private static Statement stmt;
