@@ -12,3 +12,22 @@ CREATE TABLE `chat_history` (
   `text` text,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=174 DEFAULT CHARSET=utf8;
+
+CREATE TABLE `test`.`sav_stat` (
+  `owner` INT NOT NULL,
+  `main_char` INT NOT NULL,
+  `world_pair` INT NULL,
+  PRIMARY KEY (`owner`, `main_char`))
+COMMENT = 'Linked to Users';
+
+CREATE TABLE `test`.`world_plots` (
+  `world_id` INT NOT NULL,
+  `x_loc` INT NULL,
+  `y_loc` INT NULL,
+  PRIMARY KEY (`world_id`, `x_loc`, `y_loc` ));
+  
+  select x_loc, y_loc from world_plots where world_id = (select world_pair from sav_stat where owner = (select sys_id from user_id where u_name = "alex" and p_word = "scrub"))
+
+  
+  
+  
