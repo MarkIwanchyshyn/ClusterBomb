@@ -1,0 +1,6 @@
+CREATE TABLE `test`.`user_id` (
+  `sys_id` INT NOT NULL DEFAULT 000,
+  `u_name` VARCHAR(45) NULL,
+  `p_word` VARCHAR(45) NULL,
+  PRIMARY KEY (`sys_id`))
+COMMENT = 'Human People Things';
