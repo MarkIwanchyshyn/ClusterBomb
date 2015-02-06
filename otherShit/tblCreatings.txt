@@ -4,3 +4,11 @@ CREATE TABLE `test`.`user_id` (
   `p_word` VARCHAR(45) NULL,
   PRIMARY KEY (`sys_id`))
 COMMENT = 'Human People Things';
+
+CREATE TABLE `chat_history` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user` varchar(45) DEFAULT NULL,
+  `sent` datetime NOT NULL,
+  `text` text,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=174 DEFAULT CHARSET=utf8;
