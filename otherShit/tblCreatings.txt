@@ -11,7 +11,7 @@ CREATE TABLE `chat_history` (
   `sent` datetime NOT NULL,
   `text` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=174 DEFAULT CHARSET=utf8;
+);
 
 CREATE TABLE `test`.`sav_stat` (
   `owner` INT NOT NULL,

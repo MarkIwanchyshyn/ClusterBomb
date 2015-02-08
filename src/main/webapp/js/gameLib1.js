@@ -3,6 +3,10 @@ var y = 150;
 var dx = 5;
 var dy = 5;
 
+var XMAX = 30;
+var YMAX = 30;
+
+
 var ctx;
 var drawInterval;
 
@@ -41,6 +45,19 @@ function init() {
 
 }
 
+
+function drawSquare(x, y){
+	temp = ctx.fillStyle;
+	// rgba( red, green, blue, transparency)
+	ctx.fillStyle = "rgba(0, 0, 0, 1)"
+	ctx.beginPath();
+
+	// x, y, radius, start angle, end angle, counterclockwise
+	ctx.arc(x, y, 10, 0, Math.PI*2, true);
+	ctx.closePath();
+	ctx.fill();
+	ctx.fillStyle = temp;
+}
 
 function drawCircle(x, y){
 	temp = ctx.fillStyle;
