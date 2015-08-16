@@ -28,9 +28,9 @@ public class WsChatServlet {
     public void addPerson(Session session){
         if(!previous.contains(session)){
             logger.info("adding new session "+session.getId());
-
-            previous.add(session);
-
+            synchronized (previous) {
+                previous.add(session);
+            }
             logger.info("sending last 1 hour");
             /*try {
                 session.getBasicRemote().sendText( ch.getLastHour(),true );
@@ -44,7 +44,9 @@ public class WsChatServlet {
 
     @OnClose
     public void removePerson(Session session){
-        previous.remove(session);
+        synchronized (previous) {
+            previous.remove(session);
+        }
         logger.info("removing session " + session.getId());
         sendToAll(session, leaveMsg + session.getId());
     }

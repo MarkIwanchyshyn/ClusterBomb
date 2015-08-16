@@ -34,10 +34,11 @@
         </dependency>
 
         <dependency>
-        	<groupId>org.json</groupId>
-        	<artifactId>json</artifactId>
-        	<version>20141113</version>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+            <version>1.8.5</version>
         </dependency>
+        
     </dependencies>
     <build>
         <finalName>LeafCutter</finalName>
