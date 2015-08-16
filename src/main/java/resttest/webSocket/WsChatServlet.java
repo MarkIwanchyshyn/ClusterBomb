@@ -19,9 +19,10 @@ public class WsChatServlet {
     private static Logger logger = Logger.getLogger(WsChatServlet.class.getName());
 
     static volatile List<Session> previous = new LinkedList<>();
+    static ChatHistory ch = new ChatHistory();
 
     static final String connectedMsg = "!USER CONNECTED! ";
-    static final String leaveMsg = "!USER DISCONNECTED! ";
+    static final String leaveMsg = "!USER DI SCONNECTED! ";
 
     @OnOpen
     public void addPerson(Session session){
@@ -31,11 +32,11 @@ public class WsChatServlet {
             previous.add(session);
 
             logger.info("sending last 1 hour");
-            try {
-                session.getBasicRemote().sendText(ChatHistory.getLastHour(),true);
+            /*try {
+                session.getBasicRemote().sendText( ch.getLastHour(),true );
             } catch (IOException e) {
                 logger.severe(e.toString());
-            }
+            }*/
             sendToAll(session, connectedMsg + session.getId());
 
         }
@@ -73,7 +74,7 @@ public class WsChatServlet {
         } catch (IOException e) {
             logger.severe(e.toString());
         }
-        ChatHistory.sent(getId(session),msg);
+        ch.sent(getId(session),msg);
     }
 
 

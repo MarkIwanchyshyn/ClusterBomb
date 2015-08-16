@@ -33,8 +33,11 @@
             <scope>provided</scope>
         </dependency>
 
-
-
+        <dependency>
+        	<groupId>org.json</groupId>
+        	<artifactId>json</artifactId>
+        	<version>20141113</version>
+        </dependency>
     </dependencies>
     <build>
         <finalName>LeafCutter</finalName>

@@ -24,7 +24,7 @@
     <body>
         <textarea id="chatlog" readonly></textarea><br/>
         <input id="msg" type="text" />
-        <button type="submit" id="sendButton" onClick="postToServer()">Send!</button>
-        <button type="submit" id="sendButton" onClick="closeConnect()">End</button>
+        <button id="sendButton" onClick="postToServer()">Send!</button>
+        <button id="endButton" onClick="closeConnect()">End</button>
     </body>
 </html>
